@@ -10,6 +10,6 @@ const roomSchema = new mongoose.Schema({
     type: { type: String, required: true }
 }, { strict: false });  // ✅ You add this here (after the closing bracket of fields)
 
-const Room = mongoose.model("rooms", roomSchema);
+const Room = mongoose.model("Room", roomSchema);
 
 module.exports = Room;
