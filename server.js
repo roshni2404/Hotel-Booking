@@ -11,21 +11,19 @@ const dbConfig = require("./db");
 const roomsRoute = require("./routes/roomsRoute");
 const usersRoute = require("./routes/usersRoute");
 const bookingsRoute = require("./routes/bookingsRoute");
-// const razorpayRoute = require("./routes/razorpayRoute"); // ❌ Commented (no file)
 
 // Middlewares
 app.use(cors());
 app.use(express.json());
 
-// Serve static images
+// Static Folder for Images (optional)
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // API Routes
 app.use("/api/rooms", roomsRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/bookings", bookingsRoute);
-// app.use("/api/razorpay", razorpayRoute); // ❌ REMOVE this line since not using razorpayRoute
 
-// Start server
+// Start Server
 const port = process.env.PORT || 5000;
-app.listen(port, () => console.log(`Server running on port ${port}`)); // ✅ Fixed console.log syntax
+app.listen(port, () => console.log(`✅ Server running on port ${port}`));
