@@ -12,7 +12,7 @@ router.get("/getallrooms", async (req, res) => {
     }
 });
 
-// POST room by ID
+// GET room by ID
 router.post("/getroombyid", async (req, res) => {
     const roomid = req.body.roomid;
     try {
@@ -20,6 +20,17 @@ router.post("/getroombyid", async (req, res) => {
         res.send(room);
     } catch (error) {
         return res.status(400).json({ message: error });
+    }
+});
+
+// ✅ ADD ROOM
+router.post("/addroom", async (req, res) => {
+    try {
+        const newroom = new Room(req.body);
+        await newroom.save();
+        res.send("Room added successfully");
+    } catch (error) {
+        return res.status(400).json({ message: error.message });
     }
 });
 
