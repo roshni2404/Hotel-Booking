@@ -21,7 +21,7 @@ function Adminscreen() {
                     <Rooms />
                 </TabPane>
                 <TabPane tab="Add Room" key="3">
-                    <Addroom />
+                    <Users />
                 </TabPane>
                 <TabPane tab="Users" key="4">
                     <Users />
