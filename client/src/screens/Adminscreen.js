@@ -208,9 +208,9 @@ export function Addroom() {
     const [description, setdescription] = useState("");
     const [phonenumber, setphonenumber] = useState("");
     const [type, settype] = useState("");
-    const [imageurl1, setimageurl1] = useState("");
-    const [imageurl2, setimageurl2] = useState("");
-    const [imageurl3, setimageurl3] = useState("");
+    const [imageurl, setimageurl] = useState("");
+    // const [imageurl2, setimageurl2] = useState("");
+    // const [imageurl3, setimageurl3] = useState("");
 
     async function addRoom() {
         const room = {
@@ -220,7 +220,7 @@ export function Addroom() {
             description,
             phonenumber,
             type,
-            imageurls: [imageurl1, imageurl2, imageurl3],
+            imageurls: [imageurl],
         };
 
         console.log(room); // for debug
@@ -236,9 +236,9 @@ export function Addroom() {
             setdescription("");
             setphonenumber("");
             settype("");
-            setimageurl1("");
-            setimageurl2("");
-            setimageurl3("");
+            setimageurl("");
+
+
         } catch (error) {
             console.log(error);
             message.error("Something went wrong, please try again later...");
@@ -257,13 +257,18 @@ export function Addroom() {
 
             <div className="col-md-5">
                 <input type="text" className="form-control" placeholder="type" value={type} onChange={(e) => settype(e.target.value)} />
-                <input type="text" className="form-control" placeholder="Image URL 1" value={imageurl1} onChange={(e) => setimageurl1(e.target.value)} />
-                <input type="text" className="form-control" placeholder="Image URL 2" value={imageurl2} onChange={(e) => setimageurl2(e.target.value)} />
-                <input type="text" className="form-control" placeholder="Image URL 3" value={imageurl3} onChange={(e) => setimageurl3(e.target.value)} />
-                <div className="text-right">
-                    <button className="btn btn-primary mt-3" onClick={addRoom}>Add Room</button>
-                </div>
+                <input type="text" className="form-control" placeholder="Image URL" value={imageurl} onChange={(e) => setimageurl(e.target.value)} />
+
+
+                <button className="btn btn-primary mt-3" onClick={addRoom}>Add Room</button>
             </div>
         </div>
+
     );
 }
+
+
+
+
+
+

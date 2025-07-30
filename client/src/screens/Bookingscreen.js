@@ -101,7 +101,7 @@ function Bookingscreen() {
                     <img
                         src={`/${room.imageurls[0]}`}
                         className="bigimg"
-                        alt="room"
+                        alt="room" style={{ width: "500px", height: "350px", borderRadius: "10px" }}
                     />
                 ) : (
                     <p>No image available</p>
@@ -159,3 +159,7 @@ function Bookingscreen() {
 }
 
 export default Bookingscreen;
+
+
+
+
